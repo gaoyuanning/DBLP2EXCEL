@@ -17,4 +17,4 @@ else:
     year = input('请输入年份：')
     volume = input('请输入卷号：')
 
-Downloader(venue, year)
+Downloader(venue, year, volume)
