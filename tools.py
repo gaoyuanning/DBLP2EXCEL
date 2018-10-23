@@ -225,9 +225,12 @@ def parse_html(venue, html, year, volume):
             authors = paper.find_all('span', class_='', itemprop='name')
             s = ''
             try:
-                for i in range(len(authors) - 1):
-                    s += authors[i].string + ", "
-                s += authors[len(authors) - 1].string
+                if len(authors) == 0:
+                    s = ''
+                else:
+                    for i in range(len(authors) - 1):
+                        s += authors[i].string + ", "
+                    s += authors[len(authors) - 1].string
             except TypeError:
                 print(authors)
                 exit(1)
